@@ -15,7 +15,7 @@ RingRing provides simple and fast API for sending and receiving text messages (S
         {
             MessageRequest r = new MessageRequest();
             r.ApiKey = "3FEA3112-F610-4RBD-A2FD-B3906674B5BX";
-            r.To = "32499112233";
+            r.To = "32599112233";
             r.Message = "Test Message Api";
 
             MessageApi m = new MessageApi();
