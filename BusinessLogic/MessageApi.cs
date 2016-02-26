@@ -32,7 +32,7 @@ namespace RingRing
         /// <returns>CancelResponse response</returns>
         public CancelResponse CancelMessage(CancelRequest request, bool sandbox = false)
         {
-            string url = "https://api.ringring.be/sms/" + ((sandbox) ? "sandbox" : "v1") + "/Cancel";
+            string url = string.Format("https://api.ringring.be/sms/{0}/Cancel", ((sandbox) ? "sandbox" : "v1"));
             string data = Tools.ReturnObjectToString("json", request);
             string result = Post(url, data);
 
@@ -47,7 +47,7 @@ namespace RingRing
         /// <returns>StatusMessageResponse object</returns>
         public StatusMessageResponse GetStatusMessage(StatusMessageRequest request, bool sandbox = false)
         {
-            string url = "https://api.ringring.be/sms/" + ((sandbox) ? "sandbox" : "v1") + "/StatusMessage";
+            string url = string.Format("https://api.ringring.be/sms/{0}/StatusMessage", ((sandbox) ? "sandbox" : "v1"));
             string data = Tools.ReturnObjectToString("json", request);
             string result = Post(url, data);
 
@@ -62,7 +62,7 @@ namespace RingRing
         /// <returns>StatusResponse object</returns>
         public StatusResponse GetStatus(StatusRequest request, bool sandbox = false)
         {
-            string url = "https://api.ringring.be/sms/" + ((sandbox) ? "sandbox" : "v1") + "/Status";
+            string url = string.Format("https://api.ringring.be/sms/{0}/Status", ((sandbox) ? "sandbox" : "v1"));
             string data = Tools.ReturnObjectToString("json", request);
             string result = Post(url, data);
 
@@ -76,13 +76,19 @@ namespace RingRing
         /// <returns>IncomingResponse object</returns>
         public IncomingResponse GetIncoming(IncomingRequest request)
         {
-            string url = "https://api.ringring.be/sms/" + ("v1") + "/Incoming";
+            string url = "https://api.ringring.be/sms/v1/Incoming";
             string data = Tools.ReturnObjectToString("json", request);
             string result = Post(url, data);
 
             return (IncomingResponse)Tools.ConvertToObject<IncomingResponse>(result);
         }
 
+        /// <summary>
+        /// POST data on url
+        /// </summary>
+        /// <param name="url">url from RingRing Company</param>
+        /// <param name="data">data JSON to post</param>
+        /// <returns>return result string</returns>
         private string Post(string url, string data)
         {
             string result = "";
@@ -90,7 +96,7 @@ namespace RingRing
             {
                 using (WebClient wc = new WebClient())
                 {
-                    wc.Encoding = Encoding.UTF8;
+                    wc.Encoding = Encoding.UTF8; //important !
                     wc.Headers[HttpRequestHeader.ContentType] = "application/json; charset=UTF-8";
                     wc.Headers[HttpRequestHeader.UserAgent] = "Ring Ring MessageApi Nugget";
 
@@ -99,6 +105,8 @@ namespace RingRing
             }
             catch (WebException ex)
             {
+                //if some value of properties are wrong, an error occurs
+                //get the result and transform to the current object T
                 HttpWebResponse webResponse = ex.Response as HttpWebResponse;
                 if (webResponse != null)
                 {
@@ -106,10 +114,11 @@ namespace RingRing
                     {
                         using (StreamReader stIn = new StreamReader(webResponse.GetResponseStream()))
                         {
+                            //Get the response, normaly in Json, if not it's a crash
                             result = stIn.ReadToEnd();
                         }
                     }
-                    catch (Exception exe)
+                    catch
                     {
                     }
 
