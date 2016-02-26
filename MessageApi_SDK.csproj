@@ -60,7 +60,7 @@
     <Compile Include="DataObject\StatusRequest.cs" />
     <Compile Include="DataObject\StatusResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BusinessLogic\ToolsBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\Tools.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
