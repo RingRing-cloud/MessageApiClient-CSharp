@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("MessageApiSDK")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("RingRing provides simple and fast API for sending and receiving text messages (SMS), calls and emails all over the world. We take care of the telecom infrastructure and bring additional services such as Cloud Call Center solutions, Transactional emails, SIP trunking, ...")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("The Ring Ring Company")]
 [assembly: AssemblyProduct("MessageApiSDK")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]

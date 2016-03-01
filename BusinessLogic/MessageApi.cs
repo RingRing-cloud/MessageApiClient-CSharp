@@ -98,7 +98,7 @@ namespace RingRing
                 {
                     wc.Encoding = Encoding.UTF8; //important !
                     wc.Headers[HttpRequestHeader.ContentType] = "application/json; charset=UTF-8";
-                    wc.Headers[HttpRequestHeader.UserAgent] = "Ring Ring MessageApi Nugget";
+                    wc.Headers[HttpRequestHeader.UserAgent] = "Ring Ring MessageApi NuGet";
 
                     result = wc.UploadString(url, data);
                 }
