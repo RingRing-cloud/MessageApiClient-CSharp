@@ -9,27 +9,81 @@ RingRing provides simple and fast API for sending and receiving text messages (S
 
 # Example
 
-    class Program
+###### CSharp (.NET)
+```
+class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            MessageRequest r = new MessageRequest();
-            r.ApiKey = "YOUR_ACCESS_KEY";
-            r.To = "PHONE_NUMBER"; //Must in format E164 (32496XXYYZZ)
-            r.Message = "Hello World !";
+        MessageRequest r = new MessageRequest();
+        r.ApiKey = "YOUR_ACCESS_KEY";
+        r.To = "PHONE_NUMBER"; //Must in format E164 (32496XXYYZZ)
+        r.Message = "Hello World !";
 
-            MessageApi m = new MessageApi();
-            MessageResponse resp = m.SendMessage(r);
+        MessageApi m = new MessageApi();
+        MessageResponse resp = m.SendMessage(r);
 
-            Console.WriteLine(resp.ResultDescription);
+        Console.WriteLine(resp.ResultDescription);
 
-            Console.ReadLine();
-        }
+        Console.ReadLine();
     }
+}
+```
+```
+Example in .Net Framework 4.5, but can be used on a previous version of .NET Framework
+```
 
-# .Net Version
+###### Java ( >= 6 )
+```
+public class Example {
 
-This example is in .Net Framework 4.5, but you can take this code and use it on a previous version of .Net Framework
+    public static void main(String[] args) {
+    
+        Authentication token = new Authentication("YOUR_ACCESS_KEY");
+        MessageClient client = new MessageClient(token);
+		
+		// Example using simple parameters (usually mandatory parameters)
+		try {
+			MessageResponse response = client.createMessage("PHONE_NUMBER", "YOUR_MESSAGE");
+		} catch (MessageException e) {
+			// ...
+		}
+		
+		// Example using request object (for detailed query) 
+		try {
+			MessageResponse response = client.createMessage(new MessageRequest.Builder()
+				.withTo(PHONE)
+				.withMessage("YOUR_MESSAGE")
+				.withFrom("FROM_WHO")
+				.withTimeScheduled("DD/MM/YYYY")
+				//...
+				.build()
+			);
+		} catch (MessageException e) {
+			// ...
+		}
+		
+    }
+    
+}
+```
+
+###### PHP ( >= 7.x )
+```
+$client = new Client(APIKEY);
+
+try {
+	$result = $client->sendMessage(
+		new MessageRequest(array(
+			"to" => "PHONE_NUMBER",
+			"message" => "YOUR_MESSAGE",
+			"timeScheduled"=> "DD/MM/YYYY"
+		))
+	);
+} catch(HTTPException $e) {
+	// ...
+}
+```
 
 # Installation
 
