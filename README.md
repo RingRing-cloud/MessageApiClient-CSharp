@@ -5,7 +5,7 @@ RingRing provides simple and fast API for sending and receiving text messages (S
 
 - Contact us at sales@ringring.be, we will create an account for you.
 - Once you have access to your account, you will be able to access to interface at https://portal.ringring.be. Here you will see all account information you need to send real messages through the API.
-- Lastly, download the code source from Github, or look for the 'MessageApi' Nuget package through the NuGet Packet Manager.
+- Lastly, download the code source from Github, or look for the 'MessageApi' Nuget package through the NuGet Packet Manager (.NET only).
 
 # Example
 
