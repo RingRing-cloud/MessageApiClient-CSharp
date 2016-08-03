@@ -70,19 +70,25 @@ public class Example {
 
 ###### PHP ( >= 7.x )
 ```
-$client = new Client(APIKEY);
+<?php
 
-try {
-	$result = $client->sendMessage(
-		new MessageRequest(array(
-			"to" => "PHONE_NUMBER",
-			"message" => "YOUR_MESSAGE",
-			"timeScheduled"=> "DD/MM/YYYY"
-		))
-	);
-} catch(HTTPException $e) {
-	// ...
-}
+	require_once("lib/autoload.php");
+
+	$client = new Client(APIKEY);
+	
+	try {
+		$result = $client->sendMessage(
+			new MessageRequest(array(
+				"to" => "PHONE_NUMBER",
+				"message" => "YOUR_MESSAGE",
+				"timeScheduled"=> "DD/MM/YYYY"
+			))
+		);
+	} catch(HTTPException $e) {
+		// ...
+	}
+	
+?>
 ```
 
 # Installation
