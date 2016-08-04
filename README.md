@@ -9,8 +9,7 @@ RingRing provides simple and fast API for sending and receiving text messages (S
 
 # Example
 
-###### CSharp (.NET)
-```
+```csharp
 class Program
 {
     static void Main(string[] args)
@@ -29,67 +28,10 @@ class Program
     }
 }
 ```
-```
+
+# Version
+
 Example in .Net Framework 4.5, but can be used on a previous version of .NET Framework
-```
-
-###### Java ( >= 6 )
-```
-public class Example {
-
-    public static void main(String[] args) {
-    
-        Authentication token = new Authentication("YOUR_ACCESS_KEY");
-        MessageClient client = new MessageClient(token);
-		
-		// Example using simple parameters (usually mandatory parameters)
-		try {
-			MessageResponse response = client.createMessage("PHONE_NUMBER", "YOUR_MESSAGE");
-		} catch (MessageException e) {
-			// ...
-		}
-		
-		// Example using request object (for detailed query) 
-		try {
-			MessageResponse response = client.createMessage(new MessageRequest.Builder()
-				.withTo(PHONE)
-				.withMessage("YOUR_MESSAGE")
-				.withFrom("FROM_WHO")
-				.withTimeScheduled("DD/MM/YYYY")
-				//...
-				.build()
-			);
-		} catch (MessageException e) {
-			// ...
-		}
-		
-    }
-    
-}
-```
-
-###### PHP ( >= 7.x )
-```
-<?php
-
-	require_once("lib/autoload.php");
-
-	$client = new Client(APIKEY);
-	
-	try {
-		$result = $client->sendMessage(
-			new MessageRequest(array(
-				"to" => "PHONE_NUMBER",
-				"message" => "YOUR_MESSAGE",
-				"timeScheduled"=> "DD/MM/YYYY"
-			))
-		);
-	} catch(HTTPException $e) {
-		// ...
-	}
-	
-?>
-```
 
 # Installation
 
