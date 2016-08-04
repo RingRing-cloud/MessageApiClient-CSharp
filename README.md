@@ -10,7 +10,7 @@ RingRing provides simple and fast API for sending and receiving text messages (S
 # Example
 
 ###### CSharp (.NET)
-```
+```c#
 class Program
 {
     static void Main(string[] args)
@@ -34,7 +34,7 @@ Example in .Net Framework 4.5, but can be used on a previous version of .NET Fra
 ```
 
 ###### Java ( >= 6 )
-```
+```java
 public class Example {
 
     public static void main(String[] args) {
@@ -69,7 +69,7 @@ public class Example {
 ```
 
 ###### PHP ( >= 7.x )
-```
+```php
 <?php
 
 	require_once("lib/autoload.php");
