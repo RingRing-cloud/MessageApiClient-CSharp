@@ -18,6 +18,7 @@ class Program
         r.ApiKey = "YOUR_ACCESS_KEY";
         r.To = "PHONE_NUMBER"; //Must in format E164 (32496XXYYZZ)
         r.Message = "Hello World !";
+        r.MessageEncoding = SmsEncodings.Unicode;
 
         MessageApi m = new MessageApi();
         MessageResponse resp = m.SendMessage(r);
