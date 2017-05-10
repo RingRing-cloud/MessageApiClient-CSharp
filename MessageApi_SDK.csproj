@@ -54,6 +54,7 @@
     <Compile Include="DataObject\Message.cs" />
     <Compile Include="DataObject\MessageRequest.cs" />
     <Compile Include="DataObject\MessageResponse.cs" />
+    <Compile Include="DataObject\SmsEncoding.cs" />
     <Compile Include="DataObject\StatusMessage.cs" />
     <Compile Include="DataObject\StatusMessageRequest.cs" />
     <Compile Include="DataObject\StatusMessageResponse.cs" />
