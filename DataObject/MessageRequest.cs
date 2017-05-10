@@ -61,6 +61,8 @@
         /// Format Xml or Json
         /// </summary>
         public string StatusFormat { get; set; }
+
+        public SmsEncodings MessageEncoding { get; set; }
     }
     
 }
