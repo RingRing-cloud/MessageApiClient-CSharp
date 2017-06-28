@@ -29,11 +29,13 @@
 
         /// <summary>
         /// TimeValidity is an optional datetime to indicate the validity. per default it is now + 72 hours
+        /// Format example: 30-06-2017 10:00
         /// </summary>
         public string TimeValidity { get; set; }
         
         /// <summary>
         /// TimeScheduled is a date in the future. It's optional. Default is current date and time.
+        /// Format example: 28-06-2017 15:00
         /// </summary>
         public string TimeScheduled { get; set; }
         
