@@ -28,12 +28,12 @@
         public string SenderId { get; set; }
 
         /// <summary>
-        /// TimeValidity is optional Value per default 72 hours
+        /// TimeValidity is an optional datetime to indicate the validity. per default it is now + 72 hours
         /// </summary>
         public string TimeValidity { get; set; }
         
         /// <summary>
-        /// TimeToSend is a date in the future. It's optional. Default is current date and time .
+        /// TimeScheduled is a date in the future. It's optional. Default is current date and time.
         /// </summary>
         public string TimeScheduled { get; set; }
         
