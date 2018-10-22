@@ -15,5 +15,11 @@
         public int ResultCode { get; set; }
 
         public string ResultDescription { get; set; }
+
+        public string TimeScheduled { get; set; }
+        public string From { get; set; }
+        public string MessageEncoding { get; set; }
+        public int NumberOfParts { get; set; }
+        public int NumberOfChars { get; set; }
     }
 }

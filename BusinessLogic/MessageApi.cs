@@ -96,6 +96,7 @@ namespace RingRing
             {
                 using (WebClient wc = new WebClient())
                 {
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                     wc.Encoding = Encoding.UTF8; //important !
                     wc.Headers[HttpRequestHeader.ContentType] = "application/json; charset=UTF-8";
                     wc.Headers[HttpRequestHeader.UserAgent] = "Ring Ring MessageApi NuGet";
