@@ -32,7 +32,7 @@ class Program
 
 # Version
 
-Example in .Net Framework 4.5, but can be used on a previous version of .NET Framework
+Example in .Net Framework 4.5, earlier version's are no longer supported as they do not support TLS 1.1 and TLS 1.2
 
 # Installation
 
