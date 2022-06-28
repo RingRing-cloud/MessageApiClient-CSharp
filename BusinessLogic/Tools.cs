@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace RingRing
 {
@@ -36,7 +37,10 @@ namespace RingRing
             else
             {
                 //JSON
-                dataSent = JsonConvert.SerializeObject(o, new JsonSerializerSettings() { DateFormatHandling = DateFormatHandling.IsoDateFormat });
+                var jsonSettings = new JsonSerializerSettings() { DateFormatHandling = DateFormatHandling.IsoDateFormat };
+                jsonSettings.Converters.Add(new StringEnumConverter());
+
+                dataSent = JsonConvert.SerializeObject(o, jsonSettings);
             }
 
             return dataSent;

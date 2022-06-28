@@ -102,3 +102,7 @@ UpgradeLog*.XML
 *.user
 *.scc
 Thumbs.db
+
+# Visual studio 
+/.vs
+/packages
